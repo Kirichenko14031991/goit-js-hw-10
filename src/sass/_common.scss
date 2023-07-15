@@ -1,1 +1,50 @@
 @import '~node_modules/modern-normalize/modern-normalize.css';
+
+.cat-card {
+  display: flex;
+  margin: 1%;
+}
+
+.img-cat {
+  width: 300px;
+}
+
+.cat-description {
+  padding: 10px;
+  max-width: 600px;
+}
+
+.cat-span-temperament {
+  font-weight: 700;
+  line-height: 1.5;
+  letter-spacing: 0.02em;
+}
+
+.loader {
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background: #ff3d00;
+  position: relative;
+}
+
+.loader:before,
+.loader:after {
+  content: '';
+  position: absolute;
+  border-radius: 50%;
+  inset: 0;
+  background: #fff;
+  transform: rotate(0deg) translate(30px);
+  animation: rotate 1s ease infinite;
+}
+
+.loader:after {
+  animation-delay: 0.5s;
+}
+
+@keyframes rotate {
+  100% {
+    transform: rotate(360deg) translate(30px);
+  }
+}
