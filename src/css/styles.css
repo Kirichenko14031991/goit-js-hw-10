@@ -1,0 +1,72 @@
+body {
+  background: white;
+}
+
+img {
+  border: 5px solid aliceblue;
+  max-width: 100%;
+  border-radius: 15px;
+}
+
+select {
+  display: block;
+  margin: 30px auto;
+}
+
+.breed-select {
+  width: 250px;
+  text-align: center;
+  height: 50px;
+  border: 5px solid black;
+  background-color: yellowgreen;
+}
+
+option:checked {
+  background-color: blue;
+}
+
+.cat-info {
+  border: 5px solid gold;
+  border-radius: 10px;
+  background-color: grey;
+  max-width: 1440px;
+  margin: 0 auto;
+}
+
+.cat-wrap {
+  padding: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 10px;
+  gap: 50px;
+}
+
+.cat-img {
+  max-width: 650px;
+}
+
+.cat-title {
+  font-weight: 800;
+  font-size: 40px;
+  text-align: center;
+}
+
+.cat-description {
+  width: 700px;
+  font-weight: 500;
+  font-size: 20px;
+}
+
+.cat-temperament {
+  font-weight: 700;
+  font-size: 23px;
+  text-align: center;
+}
+
+.loader,
+.error {
+  text-align: center;
+  font-size: 30px;
+  font-weight: 700;
+}
