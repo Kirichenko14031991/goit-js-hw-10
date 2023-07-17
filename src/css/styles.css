@@ -43,7 +43,8 @@ option:checked {
 }
 
 .cat-img {
-  max-width: 650px;
+  max-width: 600px;
+  max-height: 600px;
 }
 
 .cat-title {
