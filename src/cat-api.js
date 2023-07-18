@@ -6,22 +6,34 @@ const API_KEY =
 axios.defaults.headers.common['x-api-key'] = API_KEY;
 
 export function fetchBreeds() {
-  return axios.get(`${BASE_URL}/breeds`).then(response => {
-    if (response.status !== 200) {
-      console.log('There is an error while fetching a breed');
-      throw new Error(response.statusText);
-    }
-    return response.data;
-  });
+  return axios
+    .get(`${BASE_URL}/breeds`)
+    .then(response => {
+      if (response.status !== 200) {
+        console.log('There is an error while fetching a breed');
+        throw new Error(response.statusText);
+      }
+      return response.data;
+    })
+    .catch(error => {
+      console.error('Error fetching breeds:', error);
+      throw error;
+    });
 }
 
 export function fetchCatByBreed(breedId) {
   const breedUrl = `${BASE_URL}/images/search?breed_ids=${breedId}`;
-  return axios.get(breedUrl).then(response => {
-    if (response.status !== 200) {
-      console.log('There is an error while fetching a cat');
-      throw new Error(response.statusText);
-    }
-    return response.data;
-  });
+  return axios
+    .get(breedUrl)
+    .then(response => {
+      if (response.status !== 200) {
+        console.log('There is an error while fetching a cat');
+        throw new Error(response.statusText);
+      }
+      return response.data;
+    })
+    .catch(error => {
+      console.error('Error fetching cat by breed:', error);
+      throw error;
+    });
 }
