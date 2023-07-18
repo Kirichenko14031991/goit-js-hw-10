@@ -1,4 +1,7 @@
 import { fetchBreeds, fetchCatByBreed } from './cat-api.js';
+import SlimSelect from 'slim-select';
+import 'slim-select/dist/slimselect.css';
+
 const breedSelect = document.querySelector('.breed-select');
 const catInfo = document.querySelector('.cat-info');
 const loader = document.querySelector('.loader');
@@ -10,6 +13,7 @@ hideError();
 breedSelect.addEventListener('change', onSelect);
 
 function onSelect(event) {
+  resetError(); // Приховуємо повідомлення про помилку
   showLoader();
   fetchCatByBreed(event.target.value)
     .then(data => {
@@ -17,7 +21,6 @@ function onSelect(event) {
       let { name, description, temperament } = dataInformation;
       console.log(dataInformation);
       hideLoader();
-      hideError();
       showCatInfo();
       catInfo.innerHTML = `
        <div class="cat-wrap">
@@ -58,7 +61,6 @@ fetchBreeds()
   })
   .catch(error => {
     showError();
-
     console.log(error);
   });
 
@@ -81,6 +83,7 @@ function showCatInfo() {
 function hideLoader() {
   loader.style.display = 'none';
 }
+
 function hideError() {
   error.style.display = 'none';
 }
@@ -91,4 +94,8 @@ function hideSelect() {
 
 function hideCatInfo() {
   catInfo.style.display = 'none';
+}
+
+function resetError() {
+  hideError();
 }
