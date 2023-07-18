@@ -35,5 +35,9 @@ export function fetchCatByBreed(breedId) {
     .catch(error => {
       console.error('Error fetching cat by breed:', error);
       throw error;
+    })
+    .finally(() => {
+      const errorElement = document.querySelector('.error');
+      errorElement.style.display = 'none';
     });
 }
