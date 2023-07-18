@@ -39,5 +39,11 @@ export function fetchCatByBreed(breedId) {
     .finally(() => {
       const errorElement = document.querySelector('.error');
       errorElement.style.display = 'none';
+    })
+    .then(data => {
+      return data;
+    })
+    .catch(error => {
     });
 }
+
